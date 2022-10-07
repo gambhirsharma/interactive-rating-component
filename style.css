@@ -1,0 +1,144 @@
+/* Placing necessary colours in var(iables) for easier and more consistent work. Instead of changing every colour individually, once the colours are assigned to the target elements, everything can be changed painlessly from here!*/
+:root {
+  --white: hsl(0, 0%, 100%);
+  --lightGrey: hsl(217, 12%, 63%);
+  --mediumGrey: hsla(216, 12%, 54%, 0.205);
+  --darkBlue: hsl(213, 19%, 18%);
+  --veryDarkBlue: hsl(216, 12%, 8%);
+  --orange: hsl(25, 97%, 53%);
+}
+
+/*Important detail to avoid potential headaches. Border's width will be calculated in the total box size instead of overflowing*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  font-family: "Overpass", sans-serif;
+  background-color: var(--veryDarkBlue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: var(--darkBlue);
+  width: 90%;
+  padding: 1.5em;
+  border-radius: 1.5em;
+  margin: 2em auto;
+}
+
+.heading {
+  margin-bottom: 0.5em;
+  color: var(--white);
+  font-size: 1.6rem;
+}
+
+.paragraph {
+  line-height: 1.7em;
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+
+.paragraph,
+.numbers {
+  color: var(--lightGrey);
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.7em 0;
+  font-weight: bold;
+}
+
+.circle-star {
+  background-color: var(--mediumGrey);
+  border-radius: 50%;
+  padding: 1em;
+}
+
+.circle {
+  background-color: var(--mediumGrey);
+  border-radius: 50%;
+  padding: 0.8em 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.circle:hover {
+  background-color: var(--lightGrey);
+  color: var(--white);
+}
+
+/*styles when clicked*/
+.circle:active {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+/*added class with JS to the selected rating*/
+.selected {
+  background-color: var(--orange);
+  color: var(--white);
+}
+
+.evaluation button {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--white);
+  background-color: var(--orange);
+  border: none;
+  width: 100%;
+  padding: 1em;
+  border-radius: 2em;
+  display: block;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.evaluation button:active {
+  background-color: var(--white);
+  color: var(--orange);
+}
+
+.evaluation button:hover {
+  cursor: pointer;
+}
+
+.thankyou {
+  display: none;
+  text-align: center;
+}
+
+.thankyou img {
+  margin-bottom: 1em;
+}
+
+.rating {
+  background-color: var(--mediumGrey);
+  color: var(--orange);
+  border-radius: 1em;
+  padding: 0.4em 1.3em;
+  display: inline-block;
+  margin-bottom: 0.7em;
+}
+
+.evaluation {
+  display: block;
+}
+
+input[type="radio"]{
+  display: none;
+}
+
+@media all and (min-width: 500px) {
+  .card {
+    padding: 1.9em;
+    width: 400px;
+  }
+}
